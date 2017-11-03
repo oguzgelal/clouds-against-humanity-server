@@ -1,0 +1,18 @@
+{
+    "apps": [
+        {
+            "name": "lobby",
+            "script": "./run-lobby.js",
+            "instances": 1,
+            "exec_mode": "cluster",
+            "out_file": "./logs/lobby.log"
+        },
+        {
+            "name": "game",
+            "script": "./run-game.js",
+            "instances": "max",
+            "exec_mode": "cluster",
+            "out_file": "./logs/game.log"
+        }
+    ]
+}

@@ -1,0 +1,7 @@
+dump.rdb
+
+env/dev.env
+env/prod.env
+
+node_modules
+logs
