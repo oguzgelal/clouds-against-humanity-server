@@ -15,9 +15,8 @@ pm2.connect(err => {
         process.exit(2);
     }
 
-    let options = {
-        args: ['--debug']
-    };
+    // run in debug mode
+    let options = { args: ['--debug'] };
 
     console.log('> starting clusters...');
     pm2.start('start.json', options, (err, apps) => {
