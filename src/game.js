@@ -1,13 +1,15 @@
 const io = require('socket.io')();
-const redis = require('socket.io-redis');
-io.adapter(redis({
-    host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT
-}));
+//const redisio = require('socket.io-redis');
+//io.adapter(redisio({
+//    host: process.env.REDIS_HOST,
+//    port: process.env.REDIS_PORT
+//}));
 
 class Game {
 
     constructor(port) {
+
+        console.log('game cluster started on port ' + port);
 
         io.on('connection', socket => {
             console.log('Client connected (Game) ->', socket.id);

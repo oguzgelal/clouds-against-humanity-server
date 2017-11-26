@@ -3,14 +3,18 @@
         {
             "name": "lobby",
             "script": "./run-lobby.js",
+            "node_args": ["--inspect=7000"],
             "instances": 1,
+            "instance_var": "INSTANCE_ID",
             "exec_mode": "cluster",
             "out_file": "./logs/lobby.log"
         },
         {
             "name": "game",
             "script": "./run-game.js",
+            "node_args": ["--inspect=7000"],
             "instances": "max",
+            "instance_var": "INSTANCE_ID",
             "exec_mode": "cluster",
             "out_file": "./logs/game.log"
         }
