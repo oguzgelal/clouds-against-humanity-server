@@ -1,10 +1,9 @@
 const pm2 = require('pm2');
 const io = require('socket.io')();
 const redis = require('redis');
-const rediscli = redis.createClient({
-    host: process.env.REDIS_HOST,
-    port: process.env.REDIS_PORT
-});
+const redisopts = require('./config/redis-options');
+const rediscli = redis.createClient(redisopts);
+
 //const redisio = require('socket.io-redis');
 //io.adapter(redisio({
 //    host: process.env.REDIS_HOST,
@@ -50,7 +49,7 @@ class Lobby {
                     name: event.name || `${event.username}'s room`
                 });
 
-                console.log('Room created', self.getRooms());
+                console.log('Room created.', self.getRooms());
 
             });
 
