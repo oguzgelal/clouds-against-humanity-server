@@ -9,4 +9,5 @@ if (process.env.INSTANCE_ID) {
 }
 else {
     console.error('INSTANCE_ID env variable not defined. Failed to start game cluster.');
+    process.exit();
 }

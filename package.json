@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "npm install pm2 -g",
     "start": "export NODE_ENV=prod && node run.js",
-    "dev": "pm2-dev run.js --name dev",
+    "inspect": "export NODE_ENV=dev && pm2-dev run.js --name dev",
     "stop": "pm2 stop all",
     "delete": "pm2 delete all"
   },
