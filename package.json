@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "export NODE_ENV=prod && node run.js",
-    "inspect": "export NODE_ENV=dev && pm2-dev run.js --name dev",
+    "inspect": "export NODE_ENV=dev && pm2-dev run.js --name dev"
   },
   "author": "Oguz Gelal",
   "license": "ISC",
