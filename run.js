@@ -1,9 +1,9 @@
 // Get environment variables from .env file
+const pm2 = require('pm2');
+const redis = require('redis');
 const env = process.env.NODE_ENV || 'dev';
 require('dotenv').config({ path: `./env/${env}.env` })
 
-const pm2 = require('pm2');
-const redis = require('redis');
 const redisopts = require('./src/config/redis-options.js');
 
 // connect to the process manager
@@ -32,7 +32,6 @@ pm2.connect(err => {
           instances: 1,
           instance_var: 'INSTANCE_ID',
           exec_mode: 'cluster',
-          out_file: './logs/lobby.log'
         },
         {
           name: 'game',
@@ -40,7 +39,6 @@ pm2.connect(err => {
           instances: 'max',
           instance_var: 'INSTANCE_ID',
           exec_mode: 'cluster',
-          out_file: './logs/game.log'
         }
       ]
     };

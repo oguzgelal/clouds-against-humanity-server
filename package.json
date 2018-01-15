@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "export NODE_ENV=prod && node run.js",
-    "inspect": "export NODE_ENV=dev && pm2-dev run.js --name dev"
+    "start": "node run.js",
+    "inspect": "pm2-dev run.js --name dev"
   },
   "now": {
-    "name": "clouds-against-humanity",
     "dotenv": "env/prod.env"
   },
   "author": "Oguz Gelal",
