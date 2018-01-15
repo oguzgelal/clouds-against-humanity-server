@@ -7,6 +7,8 @@ const opts = {
   }
 }
 
+console.log(process.env);
+
 if (process.env.REDIS_URL) {
   opts.url = process.env.REDIS_URL;
 } else {
