@@ -7,26 +7,26 @@ const io = require('socket.io')();
 
 class Game {
 
-    constructor(port) {
+  constructor(port) {
 
-        console.log('game cluster started on port ' + port);
+    console.log('game cluster started on port ' + port);
 
-        io.on('connection', socket => {
-            console.log('Client connected (Game) ->', socket.id);
+    io.on('connection', socket => {
+      console.log('Client connected (Game) ->', socket.id);
 
-            socket.on('message', event => {
-                console.log('Message received: ', event);
-            });
+      socket.on('message', event => {
+        console.log('Message received: ', event);
+      });
 
-            socket.on('disconnect', reason => {
-                console.log('Client disconnected: ', reason);
-            });
-        });
+      socket.on('disconnect', reason => {
+        console.log('Client disconnected: ', reason);
+      });
+    });
 
-        io.listen(port, () => {
-            console.log('Game: Listening on port ' + port);
-        })
-    }
+    io.listen(port, () => {
+      console.log('Game: Listening on port ' + port);
+    })
+  }
 
 }
 
