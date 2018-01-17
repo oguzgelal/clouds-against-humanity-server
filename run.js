@@ -78,8 +78,8 @@ pm2.connect(err => {
         // prod mode, exit launcher process
         else {
           console.log('> run `pm2 list` to see the running processes.');
-          //pm2.disconnect();
-          //process.exit();
+          pm2.disconnect();
+          process.exit();
         }
       }
     });
